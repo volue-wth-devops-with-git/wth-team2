@@ -8,7 +8,7 @@ on:
 
 jobs:
   env:
-  GlobalEnv: OurGlobalEnv
+    GlobalEnv: OurGlobalEnv
   first_job:
     runs-on: ubuntu-latest
     env: 
