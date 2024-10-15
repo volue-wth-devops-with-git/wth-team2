@@ -14,5 +14,6 @@
                 "github.copilot"
             ]
 		}
-	}
+	},
+	"postCreateCommand": "bash -i -c 'dotnet restore Application/src/RazorPagesTestSample/RazorPagesTestSample.sln'"
 }
