@@ -3,4 +3,4 @@ Sample app from: https://github.com/dotnet/AspNetCore.Docs/tree/master/aspnetcor
 new comment from Victor
 new comment from Jacek
 
-this and this to check
+this and this to check second one
