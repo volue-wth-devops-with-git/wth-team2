@@ -9,6 +9,8 @@ using RazorPagesTestSample.Data;
 namespace RazorPagesTestSample
 {
     //program
+    // Second program comment Andreas
+    
     public class Program
     {
         public static void Main(string[] args)
