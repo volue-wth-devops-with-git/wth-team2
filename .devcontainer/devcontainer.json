@@ -11,7 +11,8 @@
 	"customizations": {
         "vscode": {
             "extensions": [
-                "github.copilot"
+                "github.copilot",
+				"github.actions"
             ]
 		}
 	},
