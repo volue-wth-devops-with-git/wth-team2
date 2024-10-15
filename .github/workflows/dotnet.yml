@@ -19,6 +19,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      registryName: d3s7e73tru4x2wthreg.azurecr.io
+      repositoryName: wth/dotnetcoreapp 
+      dockerFolderPath: Application/src/RazorPagesTestSample
+      tag: ${{ github.run_number }}
+
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -32,3 +38,15 @@ jobs:
     
     - name: Test
       run: dotnet test --no-build --verbosity normal ./Application/src/RazorPagesTestSample/*.sln
+
+  build_image:
+      steps:
+      - uses: actions/checkout@v2
+      - name: Docker login
+        run: |
+          docker login $registryName -u ${{ secrets.ACR_USERNAME }} -p ${{ secrets.ACR_PASSWORD }} 
+
+
+
+
+
