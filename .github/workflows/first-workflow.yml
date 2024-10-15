@@ -1,5 +1,7 @@
 name: jobs
 
+on: workflow_dispatch
+
 jobs:
   echo_job:
     steps:
