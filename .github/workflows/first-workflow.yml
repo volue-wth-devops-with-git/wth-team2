@@ -1,14 +1,17 @@
 name: jobs
 
 on: 
-  workflow_dispatch:
+  workflow_dispatch:  
+    inputs: 
+      environment:
+        description: "a global variabel"
+        required: true
+        default: "how how"
   issues:
     types: [opened]
 
 
 jobs:
-  env:
-    GlobalEnv: OurGlobalEnv
   first_job:
     runs-on: ubuntu-latest
     env: 
@@ -29,5 +32,5 @@ jobs:
     - name: Ship it 
       uses: mscoutermarsh/cowsays-action@master
       with:
-        text: 'ship ship ship! in $GlobalEnv'
+        text: "ship ship ship! in ${{github.event.inputs.environment}}"
         color: 'white'
