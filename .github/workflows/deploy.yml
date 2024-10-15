@@ -2,12 +2,6 @@ name: deploy
 
 on: 
   workflow_dispatch:  
-    inputs: 
-      environment:
-        description: "a global variabel"
-        required: true
-        default: "how how"
-
 
 jobs:
   first_job:
@@ -22,6 +16,12 @@ jobs:
         name: Sign in to Azure
         with:
           creds: ${{ secrets.SERVICE_PRINCIPAL }}
+
+      - name: Run ARM deploy
+        uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: ${{ variables.RESOURCEGROUPNAME }}
+          template: ./InfrastructureAsCode/main.bicep
 
       - name: step2
         run: echo "step2"
