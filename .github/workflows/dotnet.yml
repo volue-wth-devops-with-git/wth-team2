@@ -38,7 +38,6 @@ jobs:
       run: dotnet test --no-build --verbosity normal ./Application/src/RazorPagesTestSample/*.sln
 
   build_image:
-    needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -48,6 +47,9 @@ jobs:
     - name: Docker build
       run: |
         docker build  -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
+    - name: Docker push
+      run: | 
+        docker push $registryName/$repositoryName:$tag
     
 
 
