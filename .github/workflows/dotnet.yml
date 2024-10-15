@@ -13,14 +13,13 @@ on:
     paths:
     - 'Application/**'
 
+env:
+  registryName: d3s7e73tru4x2wthreg.azurecr.io
+  repositoryName: wth/dotnetcoreapp 
+  dockerFolderPath: Application/src/RazorPagesTestSample
+  tag: ${{ github.run_number }}
 
-jobs:
-  env:
-    registryName: d3s7e73tru4x2wthreg.azurecr.io
-    repositoryName: wth/dotnetcoreapp 
-    dockerFolderPath: Application/src/RazorPagesTestSample
-    tag: ${{ github.run_number }}
-  
+jobs:  
   build:
     runs-on: ubuntu-latest
 
