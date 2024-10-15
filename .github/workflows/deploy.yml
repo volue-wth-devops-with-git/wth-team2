@@ -16,19 +16,9 @@ jobs:
         name: Sign in to Azure
         with:
           creds: ${{ secrets.SERVICE_PRINCIPAL }}
-
-      
-      - name: Check Path
-        run: |
-          pwd
-          ls -l
-        shell: bash   
-
+ 
       - name: Run ARM deploy
         uses: azure/arm-deploy@v1
         with:
           resourceGroupName: ${{ vars.RESOURCEGROUPNAME }}
           template: ./InfrastructureAsCode/main.bicep
-
-      - name: step2
-        run: echo "step2"
