@@ -20,7 +20,7 @@ jobs:
       - name: Run ARM deploy
         uses: azure/arm-deploy@v1
         with:
-          resourceGroupName: ${{ env.RESOURCEGROUPNAME }}
+          resourceGroupName: ${{ vars.RESOURCEGROUPNAME }}
           template: ./InfrastructureAsCode/main.bicep
 
       - name: step2
