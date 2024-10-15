@@ -4,3 +4,4 @@ new comment from Victor
 new comment from Jacek
 
 this and this to check second one another one
+docker file
