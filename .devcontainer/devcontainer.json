@@ -7,5 +7,12 @@
 			"installBicep": true,
 			"version": "latest"
 		}
+	},
+	"customizations": {
+        "vscode": {
+            "extensions": [
+                "github.copilot"
+            ]
+		}
 	}
 }
