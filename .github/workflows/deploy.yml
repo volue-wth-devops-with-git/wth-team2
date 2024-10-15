@@ -1,0 +1,27 @@
+name: deploy
+
+on: 
+  workflow_dispatch:  
+    inputs: 
+      environment:
+        description: "a global variabel"
+        required: true
+        default: "how how"
+
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    env: 
+      EnvName: dev
+    steps:
+      - name: step1
+        run: echo "step1 in env $EnvName"
+
+      - uses: azure/login@v2
+        name: Sign in to Azure
+        with:
+          creds: ${{ secrets.SERVICE_PRINCIPAL }}
+
+      - name: step2
+        run: echo "step2"
