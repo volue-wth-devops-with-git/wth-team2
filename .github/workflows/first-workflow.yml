@@ -3,7 +3,7 @@ name: jobs
 on: workflow_dispatch
 
 jobs:
-  echo_job:
+  job:
     runs-on: ubuntu-latest
     steps:
       - name: step1
@@ -11,3 +11,14 @@ jobs:
 
       - name: step2
         run: echo "step2"
+
+
+jobs: 
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Ship it 
+      uses: mscoutermarsh/cowsays-action@master
+      with:
+        text: 'ship ship ship!'
+        color: 'red'
