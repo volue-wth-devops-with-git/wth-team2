@@ -3,7 +3,7 @@ name: jobs
 on: workflow_dispatch
 
 jobs:
-  job:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - name: step1
@@ -15,6 +15,7 @@ jobs:
 
 
   job2:
+    needs: job1
     runs-on: ubuntu-latest
     steps:
     - name: Ship it 
