@@ -19,6 +19,7 @@ jobs:
 
       - name: Check Path
         run: |
+          pwd
           ls -l
         shell: bash   
 
